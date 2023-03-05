@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace BulkyBookWeb.Models
 {
@@ -8,6 +9,9 @@ namespace BulkyBookWeb.Models
         public int Id { get; set; }
         [Required]
         public String Name { get; set; }
+        [Required]
+        [DisplayName("Display Order")]
+        [Range(1,100,ErrorMessage ="Display order must be bwtween 1 and 100 only!!")]
         public int DisplayOrder { get; set; }
         public DateTime CreatedDateTime { get; set; }
     }
